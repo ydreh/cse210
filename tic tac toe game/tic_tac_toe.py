@@ -4,7 +4,7 @@
 def main():
     player = next_player("")
     board = create_board()
-    while not (has_winner(board) or is_a_draw(board)):
+    while not (winner(board) or is_a_draw(board)):
         print_board(board)
         make_move(player, board)
         player = next_player(player)
@@ -32,7 +32,7 @@ def is_a_draw(board):
             return False
     return True 
     
-def has_winner(board):
+def winner(board):
     return (board[0] == board[1] == board[2] or
             board[3] == board[4] == board[5] or
             board[6] == board[7] == board[8] or
